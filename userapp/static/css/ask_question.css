@@ -1,0 +1,78 @@
+body {
+            background-color: #f7f9fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .container-box {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: 40px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="tags"],
+        .form-control {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px 15px;
+            width: 100%;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+        }
+
+        #id_description {
+            min-height: 200px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .tagify {
+            background-color: #fff !important;
+            border: 1px solid #ccc !important;
+        }
+
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #007bff !important;
+        }

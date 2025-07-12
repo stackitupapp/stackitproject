@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ask a Question | StackIt</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Tagify CSS & JS -->
+    <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+    <link rel="stylesheet" href="{% static 'css/ask_question.css' %}">
+
+    <!-- CKEditor -->
+    {{ form.media }}
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg px-4 py-2">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="{% url 'home' %}">StackIt</a>
+            <div class="d-flex align-items-center gap-3">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link text-primary">
+                    <i class="bi bi-bell fs-5"></i>
+                </a>
+                <img src="{% static 'avatar.jpeg' %}" width="35" height="35" class="rounded-circle" alt="Avatar">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Form -->
+    <div class="container-box">
+        <h4 class="mb-4">Ask a Question</h4>
+
+        <form method="POST" id="questionForm">
+            {% csrf_token %}
+
+
+            <div class="mb-4">
+                <label for="id_title">Title</label>
+                {{ form.title }}
+            </div>
+
+            <div class="mb-4">
+                <label for="id_description">Description</label>
+                {{ form.description }}
+            </div>
+
+            <div class="mb-4">
+                <label for="id_tags">Tags (max 5)</label>
+                <input name="tags" id="id_tags" placeholder="e.g. python, django, api" />
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector("#id_tags");
+
+            const tagify = new Tagify(input, {
+                whitelist: [
+                    "debugging", "programming", "best-practices", "code-review", "error-handling",
+                    "python", "javascript", "java", "c++", "c#", "typescript", "php", "html", "css", "sql", "bash",
+                    "reactjs", "node.js", "express", "django", "flask", "api", "rest", "graphql", "frontend", "backend",
+                    "machine-learning", "deep-learning", "tensorflow", "pytorch", "nlp", "pandas", "numpy", "data-analysis",
+                    "android", "ios", "react-native", "flutter", "kotlin", "swift", "mysql", "postgresql", "mongodb",
+                    "firebase", "redis", "git", "docker", "kubernetes", "ci/cd", "github-actions", "vscode", "linux",
+                    "runtime-error", "build-error", "compilation", "dependency-error", "deployment",
+                    "axios", "bootstrap", "tailwind-css", "material-ui", "next.js", "vue.js",
+                    "project-structure", "performance", "optimization", "security", "unit-testing", "integration-testing"
+                ],
+                maxTags: 5,
+                dropdown: {
+                    maxItems: 30,
+                    enabled: 0,
+                    closeOnSelect: false
+                }
+            });
+
+            tagify.on("invalid", function (e) {
+                if (e.detail.reason === "maxTags") {
+                    alert("🚫 Cannot add more than 5 tags!");
+                }
+            });
+
+            input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
