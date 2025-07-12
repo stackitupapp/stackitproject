@@ -20,6 +20,8 @@ vrajshahworks@gmail.com
 Member 3: Thakkar Divya Jaimin
 divyath2006@gmail.com
 
+video link:https://drive.google.com/drive/folders/1UAhab2Wbt4huiwo7PgSyRi_MNvcLn5UX
+
 Required Commands to run this project:
 
 in phpmyadmin create a new database named as "stackit"
