@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StackIt</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'cl-icon/css/all.min.css' %}">
+</head>
+<body>
+  <div class="wrapper">
+    <form action="" class="form" method="POST">
+      {% csrf_token %}
+      <h1 class="title">Login</h1>
+
+      <!-- Username Field -->
+      <div class="inp">
+        <input type="text" name="username" id="username" class="input" placeholder="Enter Username" required>
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <!-- Password Field -->
+      <div class="inp">
+        <input type="password" name="password" id="password" class="input" placeholder="Enter Password" required>
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <button type="submit" class="submit">Login</button>
+
+      <p class="footer">
+        <a href="#" class="link">Forgot Password?</a>
+      </p>
+
+      <p class="footer">
+        <a href="{% url 'register_user' %}" class="link">Don’t have an account? Register</a>
+      </p>
+    </form>
+
+    <div class="banner">
+      <h1 class="wel_text">
+        <a href="#" style="color: white; text-decoration: none;">StackIt</a>
+      </h1>
+      <p class="para">A Platform for Curious Minds</p>
+    </div>
+  </div>
+</body>
+</html>

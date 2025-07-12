@@ -1,0 +1,98 @@
+body {
+      background-color: #f8f9fa;
+      color: #212529;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    h5, h6 {
+      font-weight: 600;
+    }
+
+    .vote-btn {
+      cursor: pointer;
+      font-size: 24px;
+      color: #0d6efd;
+      transition: transform 0.2s ease;
+      user-select: none;
+    }
+
+    .vote-btn:hover {
+      color: #0a58ca;
+      transform: scale(1.2);
+    }
+
+    .text-info {
+      color: #0d6efd !important;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .answer-block {
+      border-left: 4px solid #0d6efd;
+      padding-left: 10px;
+    }
+
+    .vote-count {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 4px 0;
+    }
+
+    .vote-area {
+      background-color: #e9f0ff;
+      padding: 6px;
+      border-radius: 8px;
+    }
+
+    .answer-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .submit-section textarea {
+      resize: vertical;
+    }
+
+    .submit-section button {
+      width: 120px;
+    }
+
+    .profile-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .notification-wrapper {
+      position: relative;
+    }
+
+    .notification-bell {
+      font-size: 20px;
+      color: #0d6efd;
+      cursor: pointer;
+    }
+
+    .notification-bell:hover {
+      color: #0a58ca;
+    }
+
+    .notification-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      display: inline-block;
+    }

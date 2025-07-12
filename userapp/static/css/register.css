@@ -1,0 +1,17 @@
+body {
+  background: linear-gradient(45deg, #28a745, #85e085);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.register-container {
+  width: 100%;
+  max-width: 450px;
+}
+.register-box {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}

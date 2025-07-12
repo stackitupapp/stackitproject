@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StackIt</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="{% static 'cl-icon/css/all.min.css' %}" />
+</head>
+<body>
+  <div class="wrapper">
+    <form action="" class="form" method="POST">
+      {% csrf_token %}
+      <h1 class="title">Sign-Up</h1>
+
+      <!-- Username -->
+      <div class="inp">
+        <input type="text" name="username" id="username" class="input" placeholder="Enter Username" required />
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <!-- Email -->
+      <div class="inp">
+        <input type="email" name="email" id="email" class="input" placeholder="Enter Your Email" required />
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+
+      <!-- Password -->
+      <div class="inp">
+        <input type="password" name="password1" id="password1" class="input" placeholder="Create Password" required />
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="inp">
+        <input type="password" name="password2" id="password2" class="input" placeholder="Confirm Password" required />
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <button type="submit" class="submit">Sign-Up</button>
+
+      <p class="footer">
+        <a href="{% url 'login_user' %}" class="link">Already Have an Account?</a>
+      </p>
+    </form>
+
+    <div class="banner">
+      <h1 class="wel_text">
+        <a href="#" class="link" style="color: white; text-decoration: none;">StackIt</a>
+      </h1>
+      <br />
+      <p class="para">A Platform for Curious Minds</p>
+    </div>
+  </div>
+</body>
+</html>
