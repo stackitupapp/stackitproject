@@ -20,4 +20,16 @@ vrajshahworks@gmail.com
 Member 3: Thakkar Divya Jaimin
 divyath2006@gmail.com
 
+Required Commands to run this project:
 
+in phpmyadmin create a new database named as "stackit"
+
+cd stackit
+
+pip install django-ckeditor
+
+py manage.py makemigrations
+
+py manage.py migrate
+
+py manage.py runserver
